@@ -4,7 +4,6 @@ var dbConn = require('../../config/db.config');
 //Kegiatan object create
 var Kegiatan = function(kegiatan){
     this.id_kegiatan       = kegiatan.id_kegiatan;
-    this.id_user           = kegiatan.id_user;
     this.nama_kegiatan     = kegiatan.nama_kegiatan;
     this.deskripsi_kegiatan = kegiatan.deskripsi_kegiatan;
 };

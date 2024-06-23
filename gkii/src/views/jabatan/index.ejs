@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="asset/CSS/styles.css">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script>
-        function deleteJabatan(id) {
+        function deleteJabatan(id_jabatan) {
             if (confirm("Apakah Anda yakin ingin menghapus data jabatan ini?")) {
                 var http = new XMLHttpRequest();
-                http.open('DELETE', '/jabatan/delete/' + id, true);
+                http.open('DELETE', '/jabatan/delete/' + id_jabatan, true);
                 http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 http.onreadystatechange = function () {
                     if (http.readyState == 4 && http.status == 200) {
@@ -93,8 +93,10 @@
                                             <th scope="row" class="text-center"><%= (i+1) %></th>
                                             <td><%= data[i].nama_jabatan%></td>
                                             <td class="text-center">
-                                                <a href="/jabatan/edit/<%=data[i].id_jabatan%>" class="btn2">EDIT</a>
-                                                <a onclick="return alert('Are You sure?')" href="/jabatan/delete/<%=data[i].id_jabatan%>" class="btn3">HAPUS</a>
+                                                <a href="/jabatan/edit/<%=data[i].id_jabatan%>"
+                                                    class="btn2">EDIT</a>
+                                                <a onclick="return deleteJabatan(<%=data[i].id_jabatan%>)"
+                                                    class="btn3">HAPUS</a>                
                                             </td>
                                         </tr>
                                     <% }

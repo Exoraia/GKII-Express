@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="asset/CSS/styles.css">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script>
-        function deleteMember(id) {
+        function deleteMember(id_member) {
             if (confirm("Apakah Anda yakin ingin menghapus data member ini?")) {
                 var http = new XMLHttpRequest();
-                http.open('DELETE', '/member/delete/' + id, true);
+                http.open('DELETE', '/member/delete/' + id_member, true);
                 http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 http.onreadystatechange = function () {
                     if (http.readyState == 4 && http.status == 200) {
@@ -79,7 +79,7 @@
                         <table class="table table-bordered">
                             <thead>
                               <tr>
-                                <th scope="col">ID Kegiatan</th>
+                                <th scope="col">ID Member</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Aksi</th>
                               </tr>
@@ -92,8 +92,10 @@
                                             <th scope="row" class="text-center"><%= (i+1) %></th>
                                             <td><%= data[i].nama%></td>
                                             <td class="text-center">
-                                                <a href="/member/edit/<%=data[i].id_member%>" class="btn2">EDIT</a>
-                                                <a onclick="return alert('Are You sure?')" href="/member/delete/<%=data[i].id_member%>" class="btn3">HAPUS</a>
+                                                <a href="/member/edit/<%=data[i].id_member%>"
+                                                    class="btn2">EDIT</a>
+                                                <a onclick="return deleteMember(<%=data[i].id_member%>)"
+                                                    class="btn3">HAPUS</a>                
                                             </td>
                                         </tr>
                                     <% }
