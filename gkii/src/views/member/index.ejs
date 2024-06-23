@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" bacaan_user="wid_userth=device-wid_userth, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" bacaan_user="ie=edge">
+    <title>Data kegiatan Gereja</title>
+    <link rel="stylesheet" href="asset/CSS/styles.css">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script>
+        function deleteMember(id) {
+            if (confirm("Apakah Anda yakin ingin menghapus data member ini?")) {
+                var http = new XMLHttpRequest();
+                http.open('DELETE', '/member/delete/' + id, true);
+                http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                http.onreadystatechange = function () {
+                    if (http.readyState == 4 && http.status == 200) {
+                       alert('Data member berhasil dihapus');
+                        window.location.replace('/member');
+                    } 
+                    else if (http.readyState == 4 && http.status == 500) {
+                        
+                        alert('Gagal menghapus data member');
+                    }
+                }
+                http.send();
+            }
+        }
+    </script>
+</head>
+<body style="background: lightgray">
+    <nav class="top-navbar">
+        <!-- Navbar-->
+        <a href="/admin">GKII Petra Siantan</a>
+    </nav>
+    <div class="sidebar">
+                <div class="sidebar-menu">
+                    <ul>
+                        <li class="nav-link">
+                            <a href="/user"><i class="fas fa-angle-right"></i>User</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="/kegiatan"><i class="fas fa-angle-right"></i>Kegiatan</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="/member"><i class="fas fa-angle-right"></i>Member</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="/jabatan"><i class="fas fa-angle-right"></i>Jabatan</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="/posisi"><i class="fas fa-angle-right"></i>Posisi</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="./"><i class="fas fa-angle-right"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-footer">
+                    <div class="small">Log in as:</div>
+                    <strong>Admin</strong>
+                </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+
+                <% if (messages.success) { %>
+                    <div class="alert alert-success" role="alert"><%- messages.success %></div>
+                <% } %>
+                
+                <% if (messages.error) { %>
+                    <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+                <% } %>
+
+                <div class="card border-0 shadow rounded">
+                    <div class="card-body">
+                        <a href="/member/create" class="btn1">TAMBAH POST</a>
+                        <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID Kegiatan</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Aksi</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <% if(data.length){
+                                    
+                                    for(var i = 0; i< data.length; i++) {%>  
+                                        <tr>
+                                            <th scope="row" class="text-center"><%= (i+1) %></th>
+                                            <td><%= data[i].nama%></td>
+                                            <td class="text-center">
+                                                <a href="/member/edit/<%=data[i].id_member%>" class="btn2">EDIT</a>
+                                                <a onclick="return alert('Are You sure?')" href="/member/delete/<%=data[i].id_member%>" class="btn3">HAPUS</a>
+                                            </td>
+                                        </tr>
+                                    <% }
+                                    
+                                }else{ %>
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-danger" role="alert">
+                                                Data Tidak Ditemukan !
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% } %>    
+                                </tbody>
+                            </table>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    </script>
+
+</body>
+</html>

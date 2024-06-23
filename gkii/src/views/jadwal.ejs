@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GKII Petra Siantan | Jadwal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="asset/CSS/style.css">
+    <script src="asset/JS/calendar.js" defer></script>
+
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/logo (1).svg" alt="logo">
+            <p1>GKII Petra Siantan</p1>
+        </div>
+        <nav class="navigation">
+            <a href="/">Beranda</a>
+            <a href="/jadwal">Jadwal</a>
+            <a href="/informasi">Informasi Kegiatan</a>
+            <a href="/tentang">Tentang Kami</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+    <div class="isi">
+        <div class="hero">
+            <h1>Jadwal Kegiatan</h1>
+        </div>
+        <div class="jadwal">
+            <div class="sub-jadwal">
+                <div class="jadwal-ibadah">
+                    <img src="image/praying_christian.jpg">
+                    <h3>Ibadah</h3>
+                    <h5>Rabu</h5>
+                    <p>19:00 - 20:00</p>
+                </div>
+                <div class="jadwal-ibadah">
+                    <img src="image/praying_christian.jpg">
+                    <h3>Ibadah Perkauan</h3>
+                    <h5>Sabtu</h5>
+                    <p>16:00 - Selesai</p>
+                </div>
+                <div class="jadwal-ibadah">
+                    <img src="image/praying_christian.jpg">
+                    <h3>Ibadah Pemuda</h3>
+                    <h5>Sabtu</h5>
+                    <p>19:00 - 21:00</p>
+                </div>
+                <div class="jadwal-ibadah">
+                    <img src="image/praying_christian.jpg">
+                    <h3>Ibadah Raya</h3>
+                    <h5>Minggu</h5>
+                    <p>09:00 - 11:30</p>
+                </div>
+                <div class="jadwal-ibadah">
+                    <img src="image/praying_christian.jpg">
+                    <h3>Ibadah Sekolah Minggu</h3>
+                    <h5>Minggu</h5>
+                    <p>10:00 - 10:30</p>
+                </div>
+            </div>
+        </div>
+        <div class="calendar-cont">
+            <div class="wrapper-c">
+                <div class="header-c">
+                  <p class="current-date"></p>
+                  <div class="icons">
+                    <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                    <span id="next" class="material-symbols-rounded">chevron_right</span>
+                  </div>
+                </div>
+                <div class="calendar">
+                  <ul class="weeks">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                  </ul>
+                  <ul class="days"></ul>
+                </div>
+            </div>
+            <div class="event">
+                <h3>Event:</h3>
+                <ul>
+                    <li>Event Name</li>
+                </ul>
+            </div>
+            
+        </div>
+        <footer>
+            <div class="sisi_kiri">
+                <h3>
+                    Hubungi Kami
+                </h3>
+                <div class="sosmed">
+                    <p>
+                        Media Sosial:
+                    </p>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/p/GKII-PETRA-Siantan-100067364276416/?locale=nb_NO"><img src="image/FB.svg"></a>
+                        <a href="https://www.instagram.com/gkiipetrasiantan/"><img src="image/Insta.svg"></a>
+                        <a href="https://api.whatsapp.com/send?phone=6285849918650&text=Hello%20there%2C%20I%20am%20interested%20in%20your%20products"><img src="image/WA.svg"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sisi_tengah">
+                <h3>
+                    GKII Petra Siantan
+                </h3>
+                <p>
+                    Jl. 28 Oktober, Siantan Hulu, Kec. Pontianak Utara, Kota Pontianak, Kalimantan Barat 78242
+                </p>
+            </div>
+            <div class="sisi_kanan">
+                <h5>“Menjadi Gereja yang Bertumbuh Secara Kualitas dan Kuantitas”</h5>
+            </div>
+        </footer>
+    </div>
+        
+    <!-- login -->
+    <div class="wrp">
+        <div class="wrapper">
+            <span class="icon-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </span>
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <input type="username" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">
+                        Remember me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button id="login-button" type="submit" class="btn">Login</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="asset/JS/login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>

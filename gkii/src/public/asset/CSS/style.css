@@ -1,0 +1,731 @@
+/* General Styling */
+* {
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+  }
+  
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0px 2px 14px 0px lightgray;
+  }
+  
+  .logo {
+    font-size: 1.2em;
+    color: #1E1E1E;
+    user-select: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: 500;
+  }
+  
+  .logo > p1 {
+    font-weight: 600;
+  }
+  
+  .navigation {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #1E1E1E;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+  
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #1E1E1E;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .5s;
+  }
+  
+  .navigation a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #1E1E1E;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #1E1E1E;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+  }
+  
+  .navigation .btnLogin-popup:hover {
+    background: #1E1E1E;
+    color: #fff;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-size: 29px;
+  }
+  
+  h3 {
+    font-size: 23px;
+  }
+  
+  h4 {
+    font-size: 20px;
+  }
+  
+  h5 {
+    font-size: 17px;
+  }
+  
+  h6 {
+    font-size: 14px;
+  }
+  
+  /* Content */
+  .isi {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Banner */
+  .hero {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    margin-top: -8px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .hero > h1 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    color: #1E1E1E;
+    font-size: 50px;
+  }
+  
+  /* Summary */
+  .summary {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 60px;
+  }
+  
+  .text > p {
+    text-align: justify;
+    font-size: 18px;
+  }
+  
+  .summary > img {
+    width: 800px;
+    height: 400px;
+    border-radius: 25px;
+    margin-left: 60px;
+  }
+  
+  /* Address */
+  .map {
+    color: white;
+    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    margin: 20px 30px;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  .map > h1 {
+    text-align: center;
+    margin: 10px 50px;
+    padding-bottom: 25px;
+  }
+  
+  .map2 {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    gap: 30px;
+    justify-content: space-between;
+  }
+  
+  .alamat {
+    flex: 1;
+  }
+  
+  .peta {
+    flex: 1;
+    padding-right: 0;
+    margin-right: 0;
+  }
+  
+  .map iframe {
+    width: 500px;
+    height: 350px;
+    border-radius: 15px;
+  }
+  
+  /* Additional Content */
+  .tambahan {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .ayat {
+    list-style-type: none;
+    counter-reset: item;
+    padding-right: 100px;
+    margin-left: 100px;
+  }
+  
+  .ayat li {
+    counter-increment: item;
+    margin-bottom: 5px;
+  }
+  
+  .ayat li::before {
+    content: counter(item) ". ";
+    font-weight: bold;
+  }
+  
+  .gambar_kegiatan {
+    align-items: center;
+  }
+  
+  .gambar_kegiatan img {
+    border-radius: 20px;
+    margin: 15px 30px;
+  }
+  
+  /* Schedule */
+  .jadwal {
+    margin-bottom: 20px;
+  }
+  
+  .sub-jadwal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 110px;
+  }
+  
+  .jadwal-ibadah {
+    position: relative;
+    height: 400px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 14px 0px lightgray;
+  }
+  
+  .jadwal-ibadah > img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .jadwal-ibadah > h3,
+  .jadwal-ibadah > h5 {
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+  
+  .jadwal-ibadah > p {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-weight: 500;
+  }
+  
+  /* Information */
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .kegiatan {
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    gap: 30px;
+  }
+  
+  /* About Us */
+  .deskripsi {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .visi-misi {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .visi,
+  .misi {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .visi {
+    background-color: #F5F5F5;
+  }
+  
+  .misi {
+    background-color: #969696;
+    color: white;
+  }
+  
+  .poin-visi p {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    margin-top: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .susunan > h1 {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+  }
+  
+  .nama-bagian {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .nama-bagian h3 {
+    margin-bottom: 10px;
+  }
+  
+  .posisi-dan-nama {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .posisi {
+    font-weight: 500;
+    flex: 1;
+  }
+  
+  .nama {
+    flex: 1;
+  }
+  
+  .nama-bagian li {
+    list-style: none;
+  }
+  
+  /* Login */
+  .wrapper {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    background: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+  }
+  
+  .wrapper.active-popup {
+    transform: scale(1);
+  }
+  
+  .wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+  }
+  
+  .wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+  }
+  
+  .wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #1E1E1E;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .form-box h2 {
+    font-size: 2em;
+    color: #1E1E1E;
+    text-align: center;
+  }
+  
+  .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #1E1E1E;
+    margin: 30px 0;
+  }
+  
+  .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #1E1E1E;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .input-box input:focus~label,
+  .input-box input:valid~label {
+    top: -5px;
+  }
+  
+  .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #1E1E1E;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+  }
+  
+  .input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #1E1E1E;
+    line-height: 60px;
+  }
+  
+  .remember-forgot {
+    font-size: .9em;
+    color: #1E1E1E;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .remember-forgot label input {
+    accent-color: #1E1E1E;
+    margin-right: 3px;
+  }
+  
+  .remember-forgot a {
+    color: #1E1E1E;
+    text-decoration: none;
+  }
+  
+  .remember-forgot a:hover {
+    text-decoration: underline;
+  }
+  
+  .btn {
+    width: 100%;
+    height: 45px;
+    background: #1E1E1E;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font: 1em;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  /* Calendar */
+  .calendar-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px;
+  }
+
+  .wrapper-c {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-self: center;
+    width: 700px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  }
+  
+  .wrapper-c .header-c {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+  }
+  
+  .header-c .icons {
+    display: flex;
+  }
+  
+  .header-c .icons span {
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+  }
+  
+  .icons span:last-child {
+    margin-right: -10px;
+  }
+  
+  .header-c .icons span:hover {
+    background: #f2f2f2;
+  }
+  
+  .header-c .current-date {
+    font-size: 1.45rem;
+    font-weight: 500;
+  }
+  
+  .calendar {
+    padding: 20px;
+  }
+  
+  .calendar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .calendar .days {
+    margin-bottom: 20px;
+  }
+  
+  .calendar li {
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+  }
+  
+  .calendar .weeks li {
+    font-weight: 500;
+    cursor: default;
+  }
+  
+  .calendar .days li {
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+  }
+  
+  .days li.inactive {
+    color: #aaa;
+  }
+  
+  .days li.active {
+    color: #fff;
+  }
+  
+  .days li::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .days li.active::before {
+    background: #1E1E1E;
+  }
+  
+  .days li:not(.active):hover::before {
+    background: #f2f2f2;
+  }
+  
+  .event {
+    background-color: #1E1E1E;
+    color: white;
+    width: 200px;
+    padding: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .event li {
+    color: white;
+    padding: 10px;
+  }
+
+  /* Footer */
+  .sisi_kiri h3 {
+    display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  
+  .sisi_kiri {
+    display: inline-block;
+  }
+  
+  footer {
+    color: white;
+    background-color: #1E1E1E;
+    padding: 20px;
+    padding-left: 60px;
+    padding-right: 10px;
+    display: flex;
+    height: 250px;
+  }
+  
+  footer > * {
+    flex: 1;
+  }
+  
+  .sisi_kiri {}
+  
+  .sosmed p {
+    margin-bottom: 0px;
+  }
+  
+  .icon {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .sisi_tengah {
+    margin-left: 40px;
+  }
+  
+  .sisi_tengah p {
+    margin-top: 30px;
+  }
+  
+  .sisi_kanan {
+    align-self: flex-end;
+    padding-left: 90px;
+    margin-left: 40px;
+    font-style: italic;
+  }
+  
+  /* Bonus */
+  .wrp {
+    position: fixed;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    display: none;
+    backdrop-filter: blur(3px);
+  }
+  
+  .wrp.active-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pembatas {
+    height: 5px;
+    width: 100%;
+    background-color: #1E1E1E;
+  }
