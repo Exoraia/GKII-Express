@@ -27,17 +27,21 @@ exports.authenticate = function(req, res) {
 exports.authorize = function(req, res, next) {
     const authHeader = req.header('Cookie');
     console.log(authHeader);
-    if (!authHeader) return res.status(401).json({ error: 'Access denied' });
+    if (!authHeader) {
+        res.redirect('/');
+    }
     
-    const token = authHeader.split(' ')[1]; // remove the Bearer prefix
+    const token = authHeader.split('=')[1]; // remove the Bearer prefix
 
-    if (!token) return res.status(401).json({ error: 'Access denied' });
+    if (!token) {
+        res.redirect('/');
+    }
     try {
      const decoded = jwt.verify(token, envConfig.parsed.JWT_SECRET);
      req.username = decoded.username;
      req.id = decoded.id;
      next();
      } catch (error) {
-     return res.status(401).json({ error: 'Invalid token' });
+        res.redirect('/');
      }
 }

@@ -23,13 +23,14 @@ iconClose.addEventListener('click', ()=> {
 
 loginButton.addEventListener('click', ()=> {
     var http = new XMLHttpRequest();
+    http.responseType='json';
     http.open('POST', '/api/v1/auth', true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
         console.log(http.response);
-        console.log(http.response['token']);
-        document.cookie='accessToken='+ http.response['token'];
+        console.log(http.response.token);
+        document.cookie='accessToken='+ http.response.token;
         window.location.replace('/admin');
         }
     }

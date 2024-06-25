@@ -57,11 +57,17 @@ exports.editPage = function (req, res) {
         }
         else {
             console.log(kegiatan);
+            let tanggal_kegiatan = kegiatan[0].tanggal_kegiatan;
+
+            const offset = tanggal_kegiatan.getTimezoneOffset();
+
+            tanggal_kegiatan = new Date(tanggal_kegiatan.getTime() - (offset*60*1000));
+
             res.render('kegiatan/edit', {
                 messages: {},
                 nama_kegiatan: kegiatan[0].nama_kegiatan,
                 deskripsi_kegiatan: kegiatan[0].deskripsi_kegiatan,
-                tanggal_kegiatan: kegiatan[0].tanggal_kegiatan,
+                tanggal_kegiatan: tanggal_kegiatan.toISOString().split('T')[0], 
                 id_kegiatan: kegiatan[0].id_kegiatan
             });
         }
@@ -70,6 +76,7 @@ exports.editPage = function (req, res) {
 
 exports.updateKegiatan = function (req, res) {
     let id = req.params.id;
+    console.log(req.body);
     let nama_kegiatan = req.body.nama_kegiatan;
     let deskripsi_kegiatan = req.body.deskripsi_kegiatan;
     let tanggal_kegiatan = req.body.tanggal_kegiatan;
@@ -78,6 +85,7 @@ exports.updateKegiatan = function (req, res) {
         deskripsi_kegiatan: deskripsi_kegiatan,
         tanggal_kegiatan: tanggal_kegiatan
     });
+    console.log(updatedKegiatan);
     Kegiatan.update(id, updatedKegiatan, function (err, result) {
         if (err) {
             res.render('kegiatan/edit', {

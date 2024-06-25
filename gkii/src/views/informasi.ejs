@@ -29,23 +29,22 @@
             <h1>Informasi Kegiatan</h1>
         </div>
         <div class="column">
+            <% if(data.length){ for(var i=0; i< data.length; i++) {%>
             <div class="kegiatan">
                 <div class="penjelasan">
-                    <h3>Pekan Pemuda Wilayah (PPW)</h3>
-                    <p>Pekan Pemuda Wilayah merupakan acara yang penuh dengan berbagai aktivitas bermanfaat yang dirancang untuk membangun komunitas pemuda yang lebih solid, beriman, dan bersemangat. Melalui kegiatan seperti ibadah bersama, olahraga, games, dan lomba, para pemuda tidak hanya memperdalam iman dan pengetahuan mereka, tetapi juga mempererat hubungan persaudaraan dan mengembangkan berbagai keterampilan penting dalam kehidupan. Acara ini menjadi momen berharga untuk mengalami kebersamaan dalam iman dan semangat pelayanan yang kuat.</p>
+                    <h3>
+                        <%= data[i].nama_kegiatan%>
+                    </h3>
+                    <p>
+                        <%= data[i].deskripsi_kegiatan%>
+                    </p>
                 </div>
-            </div>
-            <div class="kegiatan">
-                <div class="penjelasan">
-                    <h3>Gotong Royong</h3>
-                    <p>Gotong Royong merupakan kegiatan yang dilakukan oleh GKII untuk membantu meningkatkan kualitas hidup masyarakat dan menunjukkan kasih Kristus dalam tindakan nyata. Gotong royong ini bukan hanya membantu memenuhi kebutuhan praktis masyarakat, tetapi juga memperkuat ikatan sosial dan menciptakan komunitas yang lebih harmonis dan sejahtera.</p>
+            </div> 
+            <% } }else{ %>
+                <div class="kegiatan">
+                    Data Tidak Ditemukan !
                 </div>
-            </div>
-            <div class="kegiatan">
-                <div class="penjelasan">
-                    <h3>Kegiatan dan Kunjungan dari Gereja Luar</h3>
-                    <p>Kegiatan dan kunjungan dari gereja luar adalah acara yang melibatkan jemaat gereja dari berbagai lokasi untuk berkumpul, berinteraksi, dan mempererat hubungan satu sama lain. Acara semacam ini sering kali diadakan dengan tujuan untuk memperkaya iman, membangun komunitas, serta meningkatkan kerjasama antar gereja. Salah satunya adalah kunjungan dari gereja Ramcheong dari Korea Selatan</p>
-                </div>
+            <% } %>
         </div>
         <footer>
             <div class="sisi_kiri">

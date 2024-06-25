@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const userController =   require('../controllers/user.controller.js');
+const authController =   require('../controllers/auth.controller');
 
-// Retrieve all employees
+// Call the middleware to check for authorization
+router.use(authController.authorize);
+
 router.get('/', userController.user);
 router.get('/create', userController.createPage);
 router.post('/store', userController.storeUser);

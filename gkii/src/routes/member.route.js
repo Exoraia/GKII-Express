@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const memberController =   require('../controllers/member.controller');
-// const authController =   require('../controllers/auth.controller');
+const authController =   require('../controllers/auth.controller');
 
 // // Call the middleware to check for authorization
-// router.use(authController.authorize);
+router.use(authController.authorize);
 
 router.get('/', memberController.member);
 router.get('/create', memberController.createPage);

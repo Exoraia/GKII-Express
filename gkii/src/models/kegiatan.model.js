@@ -3,9 +3,10 @@ var dbConn = require('../../config/db.config');
 
 //Kegiatan object create
 var Kegiatan = function(kegiatan){
-    this.id_kegiatan       = kegiatan.id_kegiatan;
-    this.nama_kegiatan     = kegiatan.nama_kegiatan;
+    this.id_kegiatan        = kegiatan.id_kegiatan;
+    this.nama_kegiatan      = kegiatan.nama_kegiatan;
     this.deskripsi_kegiatan = kegiatan.deskripsi_kegiatan;
+    this.tanggal_kegiatan   = kegiatan.tanggal_kegiatan;
 };
 
 Kegiatan.create = function (newKegiatan, result) {
@@ -62,7 +63,7 @@ Kegiatan.findAll = function (result) {
 };
 
 Kegiatan.update = function(id_kegiatan, kegiatan, result){
-    dbConn.query("UPDATE tb_kegiatan SET nama_kegiatan=?, deskripsi_kegiatan=?, tanggal_kegiatan=? WHERE id_kegiatan = ?", [kegiatan.nama_kegiatan, kegiatan.deskripsi_kegiatan, id_kegiatan], function (err, res) {
+    dbConn.query("UPDATE tb_kegiatan SET nama_kegiatan=?, deskripsi_kegiatan=?, tanggal_kegiatan=? WHERE id_kegiatan = ?", [kegiatan.nama_kegiatan, kegiatan.deskripsi_kegiatan, kegiatan.tanggal_kegiatan, id_kegiatan], function (err, res) {
         if(err) {
             console.log("error: ", err);
             result(err, null);
